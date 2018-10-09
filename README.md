@@ -4,7 +4,7 @@ Hovercraft game example in UE4. Acts as a game framework for a hybrid C++/Bluepr
 Video: https://youtu.be/bx0LBRroAiw
 
 
-This example was written for a lesson, and it comes with detailed explanation of all the systems.
+This example was written for a lesson, and it comes with detailed explanation of all the systems. All the code and blueprints is well commented and clear.
 
 
 # GENERAL
@@ -14,7 +14,7 @@ Controls: WASD to move, mouse to aim. Left click to fire, Right click to fire sh
 The game is a 3rd person shooter where the player controls a hovercraft in the moon, and needs to disable an orbital cannon that is threatening the earth. To disable the cannon, the player needs to disable the shield that protects it, by breaking energy crystals around the map.
 
 Hovergame is developed using unreal engine in a couple days in a gamejam style workflow but with an extra care on code design to allow easy extension into a real project. 
-The code is mostly in blueprint, with some helper components and hierarchies defined in C++. The reason for that, is that blueprint is many times faster to use than C++, making it very useful for prototyping. Once it reaches a certain level of complexity, it should be translated to C++, as C++ is far better at mantainability and allows proper source control. On a late stage project, i expect nearly all the code to be C++ except the “highest level” gameplay layer and some mission/level related logic.
+The code is mostly in blueprint, with some helper components and hierarchies defined in C++. The reason for that, is that blueprint is many times faster to use than C++, making it very useful for prototyping. Once it reaches a certain level of complexity, it should be translated to C++, as C++ is far better at mantainability and allows proper source control. On a late stage project,  nearly all the code should be C++ except the “highest level” gameplay layer and some mission/level related logic.
 
 
 # TERRAIN
