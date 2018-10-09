@@ -1,6 +1,8 @@
 # HoverGame
 Hovercraft game example in UE4. Acts as a game framework for a hybrid C++/Blueprint project. Some parts of it are easily reusable and can be used in other projects.
 
+If you want to try it, its free to download on: https://vblanco20-1.itch.io/hover-game-prototype
+
 Video: https://youtu.be/bx0LBRroAiw
 
 
