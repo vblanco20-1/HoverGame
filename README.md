@@ -20,7 +20,7 @@ The code is mostly in blueprint, with some helper components and hierarchies def
 
 
 # TERRAIN
-The Terrain was done in 10 minutes by using Houdini with a few noise filters and a couple procedural steps for the craters. 
+The Terrain was done in 10 minutes by using Houdini with a few noise filters and a couple procedural steps for the craters. There is no barrier that blocks the player from dropping from the map.
 
 # HOVERCRAFT:
 
@@ -51,7 +51,7 @@ From the experience with other games, there is a EnemyInterface, empty right now
 The game has 2 C++ enemy classes, one that inherits from Pawn, and other that inherits from Character. Both of them have no logic other than attaching the TakeDamage interface to the DamageComponent. 
 
 ENEMY- Robot:
-This is the most common enemy. It is a robot that patrols an area, and if the player gets close enough, he will fight the player. The robot has a turret very similar to the ones the player has, and shoots the player constantly. ACharacter based, with ground movement and physics
+This is the most common enemy. It is a robot that patrols an area, and if the player gets close enough, he will fight the player. The robot has a turret very similar to the ones the player has, and shoots the player constantly. ACharacter based, with ground movement and physics.
 
 ENEMY-Flying:
 Placeholder flying enemy, just flies around randomly. If the player gets close, it flies randomly near him. APawn based, with simple flying movement.
@@ -64,7 +64,7 @@ Once the player has destroyed enough crystals, the orbital cannon is activated.
 The orbital cannon will keep shooting the player anywhere in the map, and launches an explosion on a position that it predicts the player will go. If the player does not change course, he will get hit by the explosion. The player needs to perform evasive movement to avoid the explosions. Can't be destroyed directly, the player needs to destroy the 2 crystals that keep it powered. 
 
 # GLOBAL EVENTS:
-The GameInstance is used as a global event manager. It holds some delegates for damage, death, and player messages. This keeps things like the hit marker decoupled from the actual enemies, and allows the level to easily do logic when things die. 
+The GameInstance is used as a global event manager. It holds some delegates for damage, death, and player messages. This keeps things like the hit marker decoupled from the actual enemies, and allows the level to easily do logic when things die. By centralizing the events through the game instance, its very easy to hook anything to it in a modular way. T
 
 
 # LEVEL LOGIC:
@@ -74,7 +74,7 @@ For the game, the player needs to destroy 3 crystals, and then destroy the 2 cry
 To detect the destruction of the 5 total crystals, the LevelBlueprint attaches an event to the GameInstance “OnDeath” event. It also connects directly to the specific crystals OnDeath event from the DamageComponent, to remove the quest marker of that specific crystal.
 
 # INTERFACE:
-The game has a main menu which is a very simple map selection, with buttons to start a normal game, a peaceful game, or to exit. The menus go into UI input mode which shows the mouse pointer, so that the player can click the buttons.
+The game has a main menu which is a very simple map selection, with buttons to start a normal game, a peaceful game ( freeroam ), or to exit. The menus go into UI input mode which shows the mouse pointer, so that the player can click the buttons.
 
 In-game, the hovercraft pawn creates a game widget and adds it to the view. This widget holds the health bar ,the target reticle, and the message list. The target reticle is a hitmarker widget with the hitmarker logic related. The main in-game widget is connected to events in the GameInstance, and uses the Damage event to trigger the hitmarker animation. Its also connected to the Message event in the GameInstance, and it shows the message on the screen when that happens.
 If the player presses ESC or Backspace while in-game, it enters a pause. The pause pauses the game and shows a pause UI with buttons for continue or exit.
