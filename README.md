@@ -18,6 +18,27 @@ The game is a 3rd person shooter where the player controls a hovercraft in the m
 Hovergame is developed using unreal engine in a couple days in a gamejam style workflow but with an extra care on code design to allow easy extension into a real project. 
 The code is mostly in blueprint, with some helper components and hierarchies defined in C++. The reason for that, is that blueprint is many times faster to use than C++, making it very useful for prototyping. Once it reaches a certain level of complexity, it should be translated to C++, as C++ is far better at mantainability and allows proper source control. On a late stage project,  nearly all the code should be C++ except the “highest level” gameplay layer and some mission/level related logic.
 
+Some interesting features (coded in a way that they are very easy to reuse in other projects if you want):
+
+    
+* Using combined maps to change the "mission" on that map (reuses the same terrain and lighting on 2 different game maps)
+
+* Semi physics-based player hovercraft with complex movement and guns.
+
+* Efficient targetting system for lock-on and homing missiles.
+
+* Some common C++ utilities like "Get closest actor of class", or "get actors in cone"
+
+* Reusable Health/Damage component, with damage and death events, that can be added to ANY actor and directly copypasted into a game. (used in 5 projects already)
+
+* How to use the GameInstance for centralized event handling. (used to hook the damage/death events from the players to the UI, then the UI doesnt need to know about the enemies at all)
+
+* How to create multi-stage level logic, with objectives.
+
+* Several very simple enemy types
+
+* User interface with 3d objetive markers, lock-on indicators, healthbar, hitmarker, aim point, and a message system to receive "communications".
+
 
 # TERRAIN
 The Terrain was done in 10 minutes by using Houdini with a few noise filters and a couple procedural steps for the craters. There is no barrier that blocks the player from dropping from the map.
