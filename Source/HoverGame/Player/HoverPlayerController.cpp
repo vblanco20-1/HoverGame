@@ -6,7 +6,7 @@
 
 
 
-void AHoverPlayerController::Pause()
+void AHoverPlayerController::PauseGame()
 {
 	if (!GetWorld()->IsPaused())
 	{

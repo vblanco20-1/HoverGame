@@ -19,7 +19,7 @@ public:
 
 	//Pauses the game safely, calling events
 	UFUNCTION(BlueprintCallable, Category = Game)
-		void Pause();
+	void PauseGame();
 
 	//unpauses the game safely, calling events
 	UFUNCTION(BlueprintCallable, Category = Game)
