@@ -36,6 +36,7 @@ void UTargetSelectionComponent::BeginPlay()
 
 void UTargetSelectionComponent::UpdateTargetting(FTransform Aim,float DeltaTime, bool bSelectTargets)
 {
+	TRACE_CPUPROFILER_EVENT_SCOPE(TEXT("UTargetSelectionComponent::UpdateTargetting"));
 	TimeToTarget -= DeltaTime;
 
 	if (TimeToTarget < 0 && bSelectTargets)

@@ -21,12 +21,14 @@ void ATargettingSystem::BeginPlay()
 // Called every frame
 void ATargettingSystem::Tick(float DeltaTime)
 {
+	TRACE_CPUPROFILER_EVENT_SCOPE(TEXT("ATargettingSystem::Tick"));
 	Super::Tick(DeltaTime);
 
 }
 
 TArray<UTargetComponent*> ATargettingSystem::GetTargetsInCone(FVector Origin, FVector Direction, float AngleRad, float MaxDistance)
 {
+	TRACE_CPUPROFILER_EVENT_SCOPE(TEXT("ATargettingSystem::GetTargetsInCone"));
 	TArray<UTargetComponent*> Array;
 
 	UWorld* World = GetWorld();

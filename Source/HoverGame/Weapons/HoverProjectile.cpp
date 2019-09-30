@@ -22,6 +22,7 @@ void AHoverProjectile::BeginPlay()
 // Called every frame
 void AHoverProjectile::Tick(float DeltaTime)
 {
+	TRACE_CPUPROFILER_EVENT_SCOPE(TEXT("AHoverProjectile::Tick"));
 	Super::Tick(DeltaTime);
 
 }

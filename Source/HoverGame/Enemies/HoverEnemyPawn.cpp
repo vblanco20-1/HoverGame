@@ -21,6 +21,7 @@ void AHoverEnemyPawn::BeginPlay()
 // Called every frame
 void AHoverEnemyPawn::Tick(float DeltaTime)
 {
+
 	Super::Tick(DeltaTime);
 
 }

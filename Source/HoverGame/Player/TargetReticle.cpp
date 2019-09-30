@@ -21,6 +21,7 @@ void ATargetReticle::BeginPlay()
 // Called every frame
 void ATargetReticle::Tick(float DeltaTime)
 {
+	TRACE_CPUPROFILER_EVENT_SCOPE(TEXT("ATargetReticle::Tick"));
 	Super::Tick(DeltaTime);
 
 }
