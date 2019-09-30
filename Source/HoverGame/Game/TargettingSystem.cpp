@@ -35,11 +35,9 @@ TArray<UTargetComponent*> ATargettingSystem::GetTargetsInCone(FVector Origin, FV
 	Direction.Normalize();
 	//iterate components
 	for (auto T : TargetComponents)
-	{
-		
+	{		
 		if (T.IsValid())
-		{		
-
+		{
 			const float Dist = FVector::Dist(T->GetComponentLocation(), Origin);
 
 			//cull by radius
@@ -56,10 +54,6 @@ TArray<UTargetComponent*> ATargettingSystem::GetTargetsInCone(FVector Origin, FV
 					Array.Add(T.Get());
 				}
 			}
-		}
-		else
-		{
-			continue;
 		}
 	}
 

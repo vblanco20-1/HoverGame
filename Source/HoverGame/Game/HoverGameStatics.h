@@ -43,4 +43,8 @@ public:
 	//Grab targetting system. It will spawn one if there isnt one in the map
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = Gameplay, Meta = (WorldContext = "WorldContextObject"))
 		static ATargettingSystem* FindTargettingSystem(UObject* WorldContextObject);
+
+	//Grab activation system. It will spawn one if there isnt one in the map
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = Gameplay, Meta = (WorldContext = "WorldContextObject"))
+	static AActivationSystem* FindActivationSystem(UObject* WorldContextObject);
 };

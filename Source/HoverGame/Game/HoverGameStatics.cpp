@@ -4,6 +4,7 @@
 #include "HoverGame.h"
 
 #include "Game/TargettingSystem.h"
+#include "Game/ActivationSystem.h"
 
 #include "Engine.h"
 
@@ -173,3 +174,25 @@ ATargettingSystem * UHoverGameStatics::FindTargettingSystem(UObject * WorldConte
 	}
 	return TargetSys;
 }
+
+AActivationSystem* UHoverGameStatics::FindActivationSystem(UObject* WorldContextObject)
+{
+	UWorld* World = GEngine->GetWorldFromContextObjectChecked(WorldContextObject);
+
+	AActivationSystem* TargetSys = nullptr;
+	for (TActorIterator<AActivationSystem> ActorItr(World); ActorItr; ++ActorItr)
+	{
+		TargetSys = *ActorItr;
+	}
+
+	if (TargetSys == nullptr)
+	{
+		TargetSys = World->SpawnActor<AActivationSystem>();
+		if (TargetSys == nullptr)
+		{
+			TRACESTATIC("Trying to create target system failed");
+		}
+	}
+	return TargetSys;
+}
+
