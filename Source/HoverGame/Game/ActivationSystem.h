@@ -25,7 +25,6 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-
 	//register target component with system
 	void RegisterActivationComponent(UActorActivationComponent* newTarget, bool bStartState);
 
@@ -34,5 +33,6 @@ public:
 
 
 protected:
+	//Saved Components
 	TArray<FActivationState> SavedComponents;
 };
